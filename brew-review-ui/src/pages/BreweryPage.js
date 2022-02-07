@@ -8,7 +8,7 @@ function Brewery() {
     
     return (
         <div className="page-container">
-
+            <h1>To do: Populate this page with brewery information</h1>
         </div>
     )
 }

@@ -7,9 +7,9 @@ function Reviews() {
 
     return(
         <div className="page-container">
-
+            <h1>To do: Populate this page with reviews</h1>
         </div>
-        
+
     )
 }
 
