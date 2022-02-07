@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import AddBeveragePage from './pages/AddBeveragePage';
 import { useState } from 'react';
+import Navigation from './components/Navigation';
 
 function App() {
 
@@ -12,6 +13,7 @@ function App() {
       <Router>
 
         <div className="App-header">
+        <Navigation />
           <Routes>
             <Route path="/" exact element={<HomePage/>}>
             </Route>

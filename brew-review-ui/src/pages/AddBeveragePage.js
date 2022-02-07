@@ -25,6 +25,7 @@ function HomePage() {
                                     name="name"
                                 />
                             </div>
+
                             <div class="mb-3">
                             <label for="ABV" class="form-label">
                                 ABV
@@ -36,20 +37,22 @@ function HomePage() {
                                 name="ABV"
                             />
                             </div>
+
                             <div class="mb-3">
                             <label for="Brewery" class="form-label">
-                            Brewery
+                                Brewery
                             </label>
                             <input
                                 type="text"
                                 class="form-control"
                                 placeholder="Brewery"
-                                name="Brewery"
+                                name="Category"
                             />
                             </div>
+                            
                             <div class="mb-3">
                             <label for="Brewery" class="form-label">
-                            Brewery
+                                Category
                             </label>
                             <input
                                 type="text"
@@ -58,7 +61,7 @@ function HomePage() {
                                 name="Category"
                             />
                             </div>
-
+                            
                             <button class="btn btn-success">
                                 Add Beverage
                             </button>
