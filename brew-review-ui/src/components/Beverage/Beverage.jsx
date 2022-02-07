@@ -12,11 +12,11 @@ function Beverage() {
 
                     <ul class="card-text">
                         <li>ABV value: ##%</li>
-                        <li><Link to="#">Category name</Link></li>
-                        <li><Link to="#">Brewery Name</Link></li>
+                        <li><Link to="/category">Category name</Link></li>
+                        <li><Link to="/brewery">Brewery Name</Link></li>
                     </ul>
                     <div>
-                        <Link to="#">
+                        <Link to="/reviews">
                             <button class="btn btn-primary m-2">Read Reviews</button>
                         </Link>
                         <button type="button" class="btn btn-danger btn-sm m-2">Delete</button>

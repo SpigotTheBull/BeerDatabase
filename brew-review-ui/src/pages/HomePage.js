@@ -1,4 +1,4 @@
-import { useState, eseEffect, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useHistory } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { Link } from 'react-router-dom';
@@ -18,7 +18,7 @@ function HomePage() {
                                 <button type="button" class="btn btn-success" href="">Create new Beverage</button>
                             </Link>
 
-                            <p> Tenative logic: For every beverage in beverage table create a card</p>
+                            <p> Tentative logic: For every beverage in beverage table create a card</p>
                         </div>
                         <Beverage />
                         <Beverage />
