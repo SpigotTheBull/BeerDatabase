@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+//This componet is used on the home page for the beverage cards
 
 function Beverage() {
     return (
@@ -19,7 +20,9 @@ function Beverage() {
                             <button class="btn btn-primary m-2">Read Reviews</button>
                         </Link>
                         <button type="button" class="btn btn-danger btn-sm m-2">Delete</button>
-                        <button type="button" class="btn btn-warning btn-sm m-2">Edit</button>
+                        <Link to="/edit-beverage">
+                            <button type="button" class="btn btn-warning btn-sm m-2">Edit</button>
+                        </Link>
                     </div>
                 </div>
             </div>

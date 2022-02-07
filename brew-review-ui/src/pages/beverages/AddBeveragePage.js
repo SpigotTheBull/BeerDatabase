@@ -32,6 +32,9 @@ function HomePage() {
                             </label>
                             <input
                                 type="number"
+                                min="0" 
+                                max="1"
+                                step=".01"
                                 class="form-control"
                                 placeholder="0.00"
                                 name="ABV"

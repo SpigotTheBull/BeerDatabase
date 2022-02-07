@@ -1,5 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+//This componet is used on All pages as the nav bar
 
 function Navigation() {
   return (
@@ -18,12 +19,12 @@ function Navigation() {
               </li>
               <li className="nav-item">
                 <NavLink className="nav-link" to="/">
-                    Place holder 1
+                    Breweries
                 </NavLink>
               </li>
               <li className="nav-item">
                 <NavLink className="nav-link" to="/">
-                    Place holder 2
+                    Categories
                 </NavLink>
               </li>
               <li className="nav-item">
