@@ -67,7 +67,7 @@ function HomePage() {
                             </div>
                             
                             <button class="btn btn-success">
-                                Add Beverage
+                                Edit Beverage
                             </button>
 
                         </form>

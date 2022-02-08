@@ -6,7 +6,9 @@ import AddBeveragePage from './pages/beverages/AddBeveragePage';
 import EditBeveragePage from './pages/beverages/EditBeveragePage';
 import Brewery from './pages/BreweryPage';
 import Category from './pages/CategoryPage';
-import Reviews from './pages/ReviewPage';
+import Review from './pages/reviews/ReviewPage';
+import AddReview from './pages/reviews/AddReviewPage';
+import EditReview from './pages/reviews/EditReviewPage'
 import { useState } from 'react';
 import Navigation from './components/Navigation';
 
@@ -35,7 +37,11 @@ function App() {
             <Route path="/category" exact element={<Category/>}>
             </Route>
             {/*Reviews*/}
-            <Route path="/reviews" exact element={<Reviews/>}>
+            <Route path="/review" exact element={<Review/>}>
+            </Route>
+            <Route path="/add-review" exact element={<AddReview/>}>
+            </Route>
+            <Route path="/edit-review" exact element={<EditReview/>}>
             </Route>
           </Routes>
         </div>
