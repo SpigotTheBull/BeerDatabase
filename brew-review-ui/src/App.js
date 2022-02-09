@@ -5,7 +5,6 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import AddBeveragePage from './pages/beverages/AddBeveragePage';
 import EditBeveragePage from './pages/beverages/EditBeveragePage';
-import Brewery from './pages/BreweryPage';
 /** Brewery*/
 import Breweries from './pages/breweries/BreweryPage';
 import BreweryDetail from './pages/breweries/BreweryDetailPage';
