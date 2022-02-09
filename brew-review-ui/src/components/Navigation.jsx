@@ -27,6 +27,11 @@ function Navigation() {
                     Categories
                 </NavLink>
               </li>
+              <li className="nav-item">
+                <NavLink className="nav-link" to="/tag">
+                  Tags
+                </NavLink>
+              </li>
             </ul>
           </div>
         </div>

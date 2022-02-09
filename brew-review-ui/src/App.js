@@ -20,6 +20,9 @@ import { useState } from 'react';
 import Navigation from './components/Navigation';
 import AddCategory from './pages/categories/AddCategoryPage';
 import EditCategory from './pages/categories/EditCategoryPage';
+import Tag from './pages/tags/TagPage';
+import AddTag from './pages/tags/AddTagPage';
+import EditTag from './pages/tags/EditTagPage';
 
 //Main entry point for the app
 
@@ -52,6 +55,11 @@ function App() {
             {/*Category*/}
             <Route path="/category" exact element={<Category/>}>
             </Route>
+            <Route path="/add-category" exact element={<AddCategory/>}>
+            </Route>
+            <Route path="/edit-category" exact element={<EditCategory/>}>
+            </Route>
+
             {/*Reviews*/}
             <Route path="/review" exact element={<Review/>}>
             </Route>
@@ -59,9 +67,13 @@ function App() {
             </Route>
             <Route path="/edit-review" exact element={<EditReview/>}>
             </Route>
-            <Route path="/add-category" exact element={<AddCategory/>}>
+            
+            {/*Tag*/}
+            <Route path="/tag" exact element={<Tag/>}>
             </Route>
-            <Route path="/edit-category" exact element={<EditCategory/>}>
+            <Route path="/add-tag" exact element={<AddTag/>}>
+            </Route>
+            <Route path="/edit-tag" exact element={<EditTag/>}>
             </Route>
           </Routes>
         </div>
