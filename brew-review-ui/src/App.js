@@ -5,12 +5,14 @@ import HomePage from './pages/HomePage';
 import AddBeveragePage from './pages/beverages/AddBeveragePage';
 import EditBeveragePage from './pages/beverages/EditBeveragePage';
 import Brewery from './pages/BreweryPage';
-import Category from './pages/CategoryPage';
+import Category from './pages/categories/CategoryPage';
 import Review from './pages/reviews/ReviewPage';
 import AddReview from './pages/reviews/AddReviewPage';
 import EditReview from './pages/reviews/EditReviewPage'
 import { useState } from 'react';
 import Navigation from './components/Navigation';
+import AddCategory from './pages/categories/AddCategoryPage';
+import EditCategory from './pages/categories/EditCategoryPage';
 
 //Main entry point for the app
 
@@ -42,6 +44,10 @@ function App() {
             <Route path="/add-review" exact element={<AddReview/>}>
             </Route>
             <Route path="/edit-review" exact element={<EditReview/>}>
+            </Route>
+            <Route path="/add-category" exact element={<AddCategory/>}>
+            </Route>
+            <Route path="/edit-category" exact element={<EditCategory/>}>
             </Route>
           </Routes>
         </div>
