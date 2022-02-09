@@ -1,11 +1,18 @@
 import logo from './logo.svg';
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+/** Beverages */
 import HomePage from './pages/HomePage';
 import AddBeveragePage from './pages/beverages/AddBeveragePage';
 import EditBeveragePage from './pages/beverages/EditBeveragePage';
-import Brewery from './pages/BreweryPage';
+/** Brewery*/
+import Breweries from './pages/breweries/BreweryPage';
+import BreweryDetail from './pages/breweries/BreweryDetailPage';
+import AddBrewery from './pages/breweries/AddBreweryPage'
+import EditBrewery from './pages/breweries/EditBreweryPage';
+/** Category */
 import Category from './pages/CategoryPage';
+/** Reviews */
 import Review from './pages/reviews/ReviewPage';
 import AddReview from './pages/reviews/AddReviewPage';
 import EditReview from './pages/reviews/EditReviewPage'
@@ -31,8 +38,15 @@ function App() {
             <Route path="/edit-beverage" exact element={<EditBeveragePage/>}>
             </Route>
             {/*Brewery*/}
-            <Route path="/brewery" exact element={<Brewery/>}>
+            <Route path="/brewery" exact element={<Breweries/>}>
             </Route>
+            <Route path="/brewery-detail" exact element={<BreweryDetail/>}>
+            </Route>
+            <Route path="/add-brewery" exact element={<AddBrewery/>}>
+            </Route>
+            <Route path="/edit-brewery" exact element={<EditBrewery/>}>
+            </Route>
+            
             {/*Category*/}
             <Route path="/category" exact element={<Category/>}>
             </Route>

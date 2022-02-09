@@ -27,11 +27,6 @@ function Navigation() {
                     Categories
                 </NavLink>
               </li>
-              <li className="nav-item">
-                <NavLink className="nav-link" to="/">
-                    Place holder 3
-                </NavLink>
-              </li>
             </ul>
           </div>
         </div>
