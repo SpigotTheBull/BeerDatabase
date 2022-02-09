@@ -24,12 +24,14 @@ function Reviews() {
                             <table class="table">
                                 <tr>
                                     <th>Ratting</th>
-                                    <th>textReview</th>
+                                    <th>TextReview</th>
+                                    <th>Tags</th>
                                     <th></th>
                                 </tr>
                                 <tr>
                                     <td>1</td>
                                     <td>Sample data. I love this drink</td>
+                                    <td>Tasty, hoppy</td>
                                     <td>        
                                         <Link to="#">                
                                         <button type="button" class="btn btn-danger btn-sm m-2">Delete</button>
@@ -41,6 +43,7 @@ function Reviews() {
                                 <tr>
                                     <td>-1</td>
                                     <td>This drink taste bad</td>
+                                    <td>bitter</td>
                                     <td>
                                         <Link to="#">
                                             <button type="button" class="btn btn-danger btn-sm m-2">Delete</button>

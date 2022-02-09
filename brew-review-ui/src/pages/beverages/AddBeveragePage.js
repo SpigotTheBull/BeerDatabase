@@ -54,9 +54,12 @@ function AddBeverage() {
                             </div>
                             
                             <div class="mb-3">
+                                
                             <label for="Brewery" class="form-label">
                                 Category
                             </label>
+                            <br/>
+                                <small>Tenative logic is to have the backend create categories during the 1:M linking if they don't exist</small>
                             <input
                                 type="text"
                                 class="form-control"

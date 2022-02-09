@@ -30,6 +30,17 @@ function AddReview() {
                                 </div>                              
                             </div>
                             <div class="mb-3">
+                                <label for="tags" class="form-label">
+                                    Tags
+                                </label>
+                                <br/>
+                                <small>Tenative logic is to have the backend create tags during the M:M linking if they don't exist</small>
+                                <input class="form-control" name="tags" placeholder="Seperate tags with a comma">
+                                    
+                                </input> 
+
+                            </div>
+                            <div class="mb-3">
                                 <textarea class="form-control" name="textReview" rows="5" cols="60">
                                     
                                 </textarea> 
