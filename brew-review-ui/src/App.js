@@ -21,8 +21,9 @@ import AddReview from './pages/reviews/AddReviewPage';
 import EditReview from './pages/reviews/EditReviewPage'
 /** Tags */
 import TagDetail from './pages/tags/TagDetailPage';
-import TagListPage from './pages/tags/TagListPage';
-
+import Tag from './pages/tags/TagPage';
+import AddTag from './pages/tags/AddTagPage';
+import EditTag from './pages/tags/EditTagPage';
 import { useState } from 'react';
 import Navigation from './components/Navigation';
 
@@ -71,10 +72,13 @@ function App() {
             </Route>
             <Route path="/edit-review" exact element={<EditReview/>}>
             </Route>
-            {/*Tags*/}
-            <Route path="/tag-detail" exact element={<TagDetail/>}>
+            
+            {/*Tag*/}
+            <Route path="/tag-list" exact element={<Tag/>}>
             </Route>
-            <Route path="/tag-list" exact element={<TagListPage/>}>
+            <Route path="/add-tag" exact element={<AddTag/>}>
+            </Route>
+            <Route path="/edit-tag" exact element={<EditTag/>}>
             </Route>
           </Routes>
         </div>
