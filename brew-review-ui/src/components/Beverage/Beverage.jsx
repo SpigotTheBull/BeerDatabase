@@ -12,7 +12,7 @@ function Beverage() {
 
                     <ul class="card-text">
                         <li>ABV value: ##%</li>
-                        <li><Link to="/category">Category name</Link></li>
+                        <li><Link to="/category-detail">Category name</Link></li>
                         <li><Link to="/brewery-detail">Brewery Name</Link></li>
                     </ul>
                     <div>
