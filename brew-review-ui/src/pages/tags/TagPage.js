@@ -22,7 +22,7 @@ function Tags() {
                                     <th></th>
                                 </tr>
                                 <tr>
-                                    <td>Hoppy</td>
+                                    <td><Link to="../tag-detail">Hoppy</Link></td>
                                     <td>        
                                         <Link to="#">                
                                         <button type="button" class="btn btn-danger btn-sm m-2">Delete</button>
@@ -32,7 +32,7 @@ function Tags() {
                                         </Link></td>
                                 </tr>
                                 <tr>
-                                    <td>Bitter</td>
+                                    <td><Link to="../tag-detail">Bitter</Link></td>
                                     <td>
                                         <Link to="#">
                                             <button type="button" class="btn btn-danger btn-sm m-2">Delete</button>
