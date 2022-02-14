@@ -27,8 +27,10 @@ function Category() {
                                     <th></th>
                                 </tr>
                                 <tr>
-                                    <td>Beer</td>
-                                    <td>Irish IPA</td>
+                                    
+                                    <td><Link to="../category-detail">Beer</Link></td>
+                                    
+                                    <td><Link to="../category-detail">Irish IPA</Link></td>
                                     <td>        
                                         <Link to="#">                
                                         <button type="button" class="btn btn-danger btn-sm m-2">Delete</button>
@@ -38,8 +40,8 @@ function Category() {
                                         </Link></td>
                                 </tr>
                                 <tr>
-                                    <td>Wine</td>
-                                    <td>Chardonnay</td>
+                                    <td><Link to="../category-detail">Wine</Link></td>
+                                    <td><Link to="../category-detail">Chardonnay</Link></td>
                                     <td>
                                         <Link to="#">
                                             <button type="button" class="btn btn-danger btn-sm m-2">Delete</button>

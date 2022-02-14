@@ -31,7 +31,7 @@ function Reviews() {
                                 <tr>
                                     <td>1</td>
                                     <td>Sample data. I love this drink</td>
-                                    <td>Tasty, hoppy</td>
+                                    <td><Link to="../tag-detail">Tasty, hoppy</Link></td>
                                     <td>        
                                         <Link to="#">                
                                         <button type="button" class="btn btn-danger btn-sm m-2">Delete</button>
