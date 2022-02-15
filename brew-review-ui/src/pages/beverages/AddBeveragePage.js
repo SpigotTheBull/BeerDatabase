@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useHistory } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { Link } from 'react-router-dom';
+import BeverageForm from '../../components/Beverage/BeverageForm';
 
 
 function AddBeverage() {
@@ -12,68 +13,8 @@ function AddBeverage() {
             <section class="py-4 my-5">
                 <div class="container ">
                     <div class="col-md">
-                        <form>
-                            <h1>Create new Beverage</h1>
-
-                            <div class="mb-3">
-                                <label for="name" class="form-label">
-                                    Beverage Name
-                                </label>
-                                <input
-                                    type="text"
-                                    class="form-control"
-                                    placeholder="Beverage Name"
-                                    name="name"
-                                />
-                            </div>
-
-                            <div class="mb-3">
-                            <label for="ABV" class="form-label">
-                                ABV
-                            </label>
-                            <input
-                                type="number"
-                                min="0" 
-                                max="1"
-                                step=".01"
-                                class="form-control"
-                                placeholder="0.00"
-                                name="ABV"
-                            />
-                            </div>
-
-                            <div class="mb-3">
-                            <label for="Brewery" class="form-label">
-                                Brewery
-                            </label>
-                            <input
-                                type="text"
-                                class="form-control"
-                                placeholder="Brewery"
-                                name="Category"
-                            />
-                            </div>
-                            
-                            <div class="mb-3">
-                                
-                            <label for="Brewery" class="form-label">
-                                Category
-                            </label>
-                            <br/>
-                                <small>Tenative logic is to have the backend create categories during the 1:M linking if they don't exist</small>
-                            <input
-                                type="text"
-                                class="form-control"
-                                placeholder="Category"
-                                name="Category"
-                            />
-                            </div>
-                            
-                            <button class="btn btn-success">
-                                Add Beverage
-                            </button>
-
-                        </form>
+                        <h1>Create new Beverage</h1>
+                        <BeverageForm />
                     </div>
                 </div>
             </section>

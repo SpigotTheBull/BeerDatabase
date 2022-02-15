@@ -35,7 +35,7 @@ function ReviewForm() {
                     </textarea>
                 </div>
                 <button class="btn btn-success">
-                    Add Review
+                    Submit Review
                 </button>
 
             </form>

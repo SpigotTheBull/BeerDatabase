@@ -46,6 +46,7 @@ function App() {
             </Route>
             <Route path="/edit-beverage" exact element={<EditBeveragePage/>}>
             </Route>
+            
             {/*Brewery*/}
             <Route path="/brewery" exact element={<Breweries/>}>
             </Route>
@@ -65,6 +66,7 @@ function App() {
             </Route>
             <Route path="/edit-category" exact element={<EditCategory/>}>
             </Route>
+
             {/*Reviews*/}
             <Route path="/review" exact element={<Review/>}>
             </Route>

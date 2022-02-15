@@ -7,7 +7,6 @@ function BreweryForm() {
 
         <div>
             <form>
-
                 <div class="mb-3">
                     <label for="name" class="form-label">
                         Brewery Name
@@ -52,7 +51,6 @@ function BreweryForm() {
                         name="city"
                     />
                 </div>
-
                 <div class="mb-3">
                     <label for="state" class="form-label">
                         State
@@ -86,9 +84,8 @@ function BreweryForm() {
                         name="website"
                     />
                 </div>
-
                 <button class="btn btn-success">
-                    Add Brewery
+                    Submit Brewery
                 </button>
 
             </form>
