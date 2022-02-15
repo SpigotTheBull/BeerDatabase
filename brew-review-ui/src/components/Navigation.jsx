@@ -28,6 +28,11 @@ function Navigation() {
                 </NavLink>
               </li>
               <li className="nav-item">
+                <NavLink className="nav-link" to="/parent-category">
+                  Parent Category
+                </NavLink>
+              </li>
+              <li className="nav-item">
                 <NavLink className="nav-link" to="/tag-list">
                   Tags
                 </NavLink>

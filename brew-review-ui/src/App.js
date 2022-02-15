@@ -15,6 +15,11 @@ import Category from './pages/categories/CategoryPage';
 import AddCategory from './pages/categories/AddCategoryPage';
 import EditCategory from './pages/categories/EditCategoryPage';
 import CategoryDetail from './pages/categories/CategoryDetailPage';
+/** Parent Category */
+import AddParentCategory from './pages/parent-category/AddParentCategoryPage';
+import EditParentCategory from './pages/parent-category/EditParentCategoryPage';
+import ParentCategory from './pages/parent-category/ParentCategoryPage';
+import ParentCategoryDetail from './pages/parent-category/ParentCategoryDetailPage';
 /** Reviews */
 import Review from './pages/reviews/ReviewPage';
 import AddReview from './pages/reviews/AddReviewPage';
@@ -65,6 +70,16 @@ function App() {
             <Route path="/add-category" exact element={<AddCategory/>}>
             </Route>
             <Route path="/edit-category" exact element={<EditCategory/>}>
+            </Route>
+
+            {/*Parent Category*/}
+            <Route path="/parent-category" exact element={<ParentCategory/>}>
+            </Route>
+            <Route path="/parent-category-detail" exact element={<ParentCategoryDetail/>}>
+            </Route>
+            <Route path="/add-parent-category" exact element={<AddParentCategory/>}>
+            </Route>
+            <Route path="/edit-parent-category" exact element={<EditParentCategory/>}>
             </Route>
 
             {/*Reviews*/}

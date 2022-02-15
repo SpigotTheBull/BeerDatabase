@@ -11,34 +11,29 @@ function EditCategory() {
             <section class="py-4 my-5">
                 <div class="container ">
                     <div class="col-md">
+                    <h1>Edit category</h1>
+                            <h2>Alcohol Type</h2>
                         <form>
-                            <h1>Edit Category</h1>
-                            <p>To do: Populate this page with the data being edited</p>
-
                             <div class="mb-3">
                                 <label for="parent-category" class="form-label">
-                                    Parent Category (Type)
+                                    Type
                                 </label>
-                                <input
-                                    type="text"
-                                    class="form-control"
-                                    placeholder="Parent Category (Type)"
-                                    name="parent-category"
-                                />
+                                <br />
+                                <small>First textbox will contain the parent category and the second textbox contains the category</small>
+                                <input class="form-control" name="parent-category" placeholder="Contains parent category">
+                                </input>
+
                             </div>
-                            
                             <div class="mb-3">
-                            <label for="Brewery" class="form-label">
-                                Category
-                            </label>
-                            <input
-                                type="text"
-                                class="form-control"
-                                placeholder="Category"
-                                name="Category"
-                            />
+                                <label for="category" class="form-label">
+                                    Category
+                                </label>
+                                <input class="form-control" name="category" placeholder="Contains category">
+
+                                </input>
                             </div>
-                            
+
+
                             <button class="btn btn-success">
                                 Edit Category
                             </button>
