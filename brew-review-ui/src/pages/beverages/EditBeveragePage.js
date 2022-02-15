@@ -65,11 +65,9 @@ function HomePage() {
                                 name="Category"
                             />
                             </div>
-                            
                             <button class="btn btn-success">
                                 Edit Beverage
                             </button>
-
                         </form>
                     </div>
                 </div>
