@@ -8,12 +8,12 @@ function Beverage({beverage}) {
         <div class="col-md-6 col-lg-4 mb-4">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">{beverage.Brewery}</h5>
+                    <h5 class="card-title">{beverage.Beverage_Name}</h5>
 
                     <ul class="card-text">
-                        <li>ABV value: ##%</li>
-                        <li><Link to="/category-detail">Category name</Link></li>
-                        <li><Link to="/brewery-detail">Brewery Name</Link></li>
+                        <li>ABV value: {beverage.ABV}</li>
+                        <li><Link to="/category-detail">{beverage.Category}</Link></li>
+                        <li><Link to="/brewery-detail">{beverage.Brewery}</Link></li>
                     </ul>
                     <div>
                         <Link to="/review">
