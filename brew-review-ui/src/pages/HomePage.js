@@ -3,9 +3,22 @@ import { useHistory } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { Link } from 'react-router-dom';
 import Beverage from '../components/Beverage/Beverage';
+import BeverageList from '../components/Beverage/BeverageList';
 
 function HomePage() {
     const history = useNavigate();
+
+    const [beverage, setBeverage] = useState([]);
+
+    const loadBeverage = async () => {
+        const response = await fetch('https://brew-review-backend.herokuapp.com/beverage/');
+        const data = await response.json();
+        setBeverage(data);
+    }
+    //useEffect calls loadBeverage() to get the Beverage data asyncronously.
+    useEffect(() => {
+        loadBeverage();
+    }, []);
 
     return (
         <>
@@ -20,6 +33,8 @@ function HomePage() {
 
                             <p> Tentative logic: For every beverage in beverage table create a card</p>
                         </div>
+
+                        <BeverageList beverage={beverage} ></BeverageList>
                         <Beverage />
                         <Beverage />
                         <Beverage />

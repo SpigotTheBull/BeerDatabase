@@ -2,13 +2,13 @@ import React from "react";
 import { Link } from "react-router-dom";
 //This componet is used on the home page for the beverage cards
 
-function Beverage() {
+function Beverage({beverage}) {
     return (
 
         <div class="col-md-6 col-lg-4 mb-4">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">Beverage name</h5>
+                    <h5 class="card-title">{beverage.Brewery}</h5>
 
                     <ul class="card-text">
                         <li>ABV value: ##%</li>
