@@ -7,15 +7,18 @@ import { Link } from 'react-router-dom';
 import {  useParams } from 'react-router-dom';
 import Beverage from '../../components/Beverage/Beverage';
 import BeverageList from '../../components/Beverage/BeverageList';
+import CategoryList from '../../components/category/CategoryList';
 
 function CategoryDetail() {
     
     const [beverages, setBeverages] = useState([]);
 
+    const [category, setCategory] = useState([]);
+
     //The slug is the categoryID
     const slug = useParams();
 
-    //useEffect calls loadBeverage() to get the Beverage data asyncronously.
+    // Fetch beverages in this category
     useEffect(() => {
         loadBeverages();
     }, []);
@@ -27,6 +30,18 @@ function CategoryDetail() {
     }
     console.log(beverages)
 
+    // Fetch category info for this category
+    useEffect(() => {
+        loadCategory();
+    }, []);
+
+    const loadCategory =  async () => {
+        await fetch(`https://brew-review-backend.herokuapp.com/category/${slug.slug}`)
+        .then(responce => responce.json())
+        .then(receivedData => setCategory(receivedData));
+    }
+    console.log(category)
+
 
     return (
         <div className="page-container">
@@ -35,7 +50,7 @@ function CategoryDetail() {
                 <div class="container ">
                     <div class="row">
                         <div class="col-12">
-                            <h2 class="mb-3 col-4">Beverages by "Type - Category name"</h2>
+                            <h2 class="mb-3 col-12">Beverages by <CategoryList category={category}></CategoryList></h2>
 
 
                             <Link to="../add-beverage">
