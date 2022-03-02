@@ -55,7 +55,7 @@ function App() {
             {/*Brewery*/}
             <Route path="/brewery" exact element={<Breweries/>}>
             </Route>
-            <Route path="/brewery-detail" exact element={<BreweryDetail/>}>
+            <Route path="/brewery-detail/:slug" exact element={<BreweryDetail/>}>
             </Route>
             <Route path="/add-brewery" exact element={<AddBrewery/>}>
             </Route>

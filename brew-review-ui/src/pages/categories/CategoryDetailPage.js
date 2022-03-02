@@ -12,6 +12,7 @@ function CategoryDetail() {
     
     const [beverages, setBeverages] = useState([]);
 
+    //The slug is the categoryID
     const slug = useParams();
 
     //useEffect calls loadBeverage() to get the Beverage data asyncronously.

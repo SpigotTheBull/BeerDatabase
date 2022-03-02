@@ -3,10 +3,32 @@ import { useHistory } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { Link } from 'react-router-dom';
 import Brewery from '../../components/Brewery/Brewery';
-import Beverage from '../../components/Beverage/Beverage';
 
+
+import {  useParams } from 'react-router-dom';
+import BeverageList from '../../components/Beverage/BeverageList';
 
 function BreweryDetail() {
+
+       
+    const [beverages, setBeverages] = useState([]);
+
+    //The slug is the breweryID
+    const slug = useParams();
+
+    //useEffect calls loadBeverage() to get the Beverage data asyncronously.
+    useEffect(() => {
+        loadBeverages();
+    }, []);
+
+    const loadBeverages =  async () => {
+        await fetch(`https://brew-review-backend.herokuapp.com/beverage/brewery/${slug.slug}`)
+        .then(responce => responce.json())
+        .then(receivedData => setBeverages(receivedData));
+    }
+    console.log(beverages)
+
+
     
     return (
         <div className="page-container">
@@ -24,11 +46,7 @@ function BreweryDetail() {
 
                             <p> Tentative logic: For every Beverage in Beverage table create a card if it matches this brewery</p>
                         </div>
-                        <Beverage />
-                        <Beverage />
-                        <Beverage />
-                        <Beverage />
-                        <Beverage />                   
+                        <BeverageList beverage={beverages} ></BeverageList>                 
                     </div>
                 </div>
             </section>            
