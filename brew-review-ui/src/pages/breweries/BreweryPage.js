@@ -3,9 +3,23 @@ import { useHistory } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { Link } from 'react-router-dom';
 import Brewery from '../../components/Brewery/Brewery';
+import BreweryList from '../../components/Brewery/BreweryList';
 
 
 function Breweries() {
+    const [breweries, setBreweries] = useState([]);
+
+    //useEffect calls loadBeverage() to get the Beverage data asyncronously.
+    useEffect(() => {
+        loadBreweries();
+    }, []);
+
+    const loadBreweries =  async () => {
+        await fetch('https://brew-review-backend.herokuapp.com/brewery/')
+        .then(responce => responce.json())
+        .then(receivedData => setBreweries(receivedData));
+    }
+    console.log(breweries)
     
     return (
         <div className="page-container">
@@ -22,13 +36,8 @@ function Breweries() {
 
                             <p> Tentative logic: For every Brewery in Brewery table create a card</p>
                         </div>
-                        <Brewery />
-                        <Brewery />
-                        <Brewery />
-                        <Brewery />
-                        <Brewery />
-                        <Brewery />
-
+                        <BreweryList brewery={breweries} > </BreweryList>
+                        
                         
                     </div>
                 </div>

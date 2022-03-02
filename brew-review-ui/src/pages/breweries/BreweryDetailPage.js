@@ -7,6 +7,7 @@ import Brewery from '../../components/Brewery/Brewery';
 
 import {  useParams } from 'react-router-dom';
 import BeverageList from '../../components/Beverage/BeverageList';
+import BreweryList from '../../components/Brewery/BreweryList';
 
 function BreweryDetail() {
 
@@ -28,7 +29,19 @@ function BreweryDetail() {
     }
     console.log(beverages)
 
+    const [breweries, setBreweries] = useState([]);
 
+    //useEffect calls loadBeverage() to get the Beverage data asyncronously.
+    useEffect(() => {
+        loadBreweries();
+    }, []);
+
+    const loadBreweries =  async () => {
+        await fetch(`https://brew-review-backend.herokuapp.com/brewery/${slug.slug}`)
+        .then(responce => responce.json())
+        .then(receivedData => setBreweries(receivedData));
+    }
+    console.log(breweries)
     
     return (
         <div className="page-container">
@@ -37,8 +50,8 @@ function BreweryDetail() {
                 <div class="container ">
                     <div class="row">
                         <div class="col-12">
-                            <h2 class="mb-3 col-4">Beverages by "Brewery name"</h2>
-                            <Brewery />
+                            <h2 class="mb-3 col-4">Beverages by </h2>
+                            <BreweryList brewery={breweries}></BreweryList>
 
                             <Link to="../add-beverage">
                                 <button type="button" class="btn btn-success" href="">Create new Beverage</button>
