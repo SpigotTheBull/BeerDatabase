@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 //This componet is used on the home page for the beverage cards
 
 function Beverage({beverage}) {
+    const categoryLink = "/category-detail/" + beverage.categoryID;
+    
     return (
 
         <div class="col-md-6 col-lg-4 mb-4">
@@ -12,7 +14,8 @@ function Beverage({beverage}) {
 
                     <ul class="card-text">
                         <li>ABV value: {beverage.ABV}</li>
-                        <li><Link to="/category-detail">{beverage.Category}</Link></li>
+
+                        <li><Link to={categoryLink}>{beverage.Category}</Link></li>
                         <li><Link to="/brewery-detail">{beverage.Brewery}</Link></li>
                     </ul>
                     <div>
