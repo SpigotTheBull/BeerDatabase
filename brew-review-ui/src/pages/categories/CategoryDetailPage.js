@@ -1,13 +1,32 @@
 import { useState, useEffect } from 'react';
 import { useHistory } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import {useLocation} from "react-router-dom";
 import { Link } from 'react-router-dom';
 
+import {  useParams } from 'react-router-dom';
 import Beverage from '../../components/Beverage/Beverage';
-
+import BeverageList from '../../components/Beverage/BeverageList';
 
 function CategoryDetail() {
     
+    const [beverages, setBeverages] = useState([]);
+
+    const slug = useParams();
+
+    //useEffect calls loadBeverage() to get the Beverage data asyncronously.
+    useEffect(() => {
+        loadBeverages();
+    }, []);
+
+    const loadBeverages =  async () => {
+        await fetch(`https://brew-review-backend.herokuapp.com/beverage/category/${slug.slug}`)
+        .then(responce => responce.json())
+        .then(receivedData => setBeverages(receivedData));
+    }
+    console.log(beverages)
+
+
     return (
         <div className="page-container">
 
@@ -24,11 +43,8 @@ function CategoryDetail() {
 
                             <p> Tentative logic: Select beverages with matching category and display below</p>
                         </div>
-                        <Beverage />
-                        <Beverage />
-                        <Beverage />
-                        <Beverage />
-                        <Beverage />                   
+                        <BeverageList beverage={beverages} ></BeverageList>
+                  
                     </div>
                 </div>
             </section>            

@@ -65,7 +65,7 @@ function App() {
             {/*Category*/}
             <Route path="/category" exact element={<Category/>}>
             </Route>
-            <Route path="/category-detail" exact element={<CategoryDetail/>}>
+            <Route path="/category-detail/:slug" exact element={<CategoryDetail />}>
             </Route>
             <Route path="/add-category" exact element={<AddCategory/>}>
             </Route>
