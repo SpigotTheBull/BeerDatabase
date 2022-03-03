@@ -1,10 +1,25 @@
 import { useState, useEffect } from 'react';
-import { useHistory } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
+import {  useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import ReviewTable from '../../components/Review/ReviewTable';
 
 function Reviews() {
+    //The slug is the categoryID
+    const slug = useParams();
 
+    const [reviews, setReviews] = useState([]);
+
+    //useEffect calls loadBeverage() to get the Beverage data asyncronously.
+    useEffect(() => {
+        loadReviews();
+    }, []);
+
+    const loadReviews =  async () => {
+        await fetch(`https://brew-review-backend.herokuapp.com/review/beverage/${slug.slug}`)
+        .then(responce => responce.json())
+        .then(receivedData => setReviews(receivedData));
+    }
+    console.log(reviews)
     return (
         <section class="py-4 my-5">
             <div class="container ">
@@ -22,36 +37,17 @@ function Reviews() {
                             <button class="btn btn-success">New Review</button>
                             </Link>
                             <table class="table">
+                                <thead>
                                 <tr>
-                                    <th>Ratting</th>
+                                    <th>Rating</th>
                                     <th>TextReview</th>
                                     <th>Tags</th>
                                     <th></th>
                                 </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>Sample data. I love this drink</td>
-                                    <td><Link to="../tag-detail">Tasty, hoppy</Link></td>
-                                    <td>        
-                                        <Link to="#">                
-                                        <button type="button" class="btn btn-danger btn-sm m-2">Delete</button>
-                                        </Link>
-                                        <Link to="../edit-review">
-                                            <button type="button" class="btn btn-warning btn-sm m-2">Edit</button>
-                                        </Link></td>
-                                </tr>
-                                <tr>
-                                    <td>-1</td>
-                                    <td>This drink taste bad</td>
-                                    <td>bitter</td>
-                                    <td>
-                                        <Link to="#">
-                                            <button type="button" class="btn btn-danger btn-sm m-2">Delete</button>
-                                        </Link>
-                                        <Link to="#">
-                                            <button type="button" class="btn btn-warning btn-sm m-2">Edit</button>
-                                        </Link></td>
-                                </tr>
+                                </thead>
+                                <tbody>
+                                <ReviewTable review={reviews}></ReviewTable>
+                                </tbody>
                             </table>
 
 

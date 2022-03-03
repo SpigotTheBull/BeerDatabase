@@ -83,7 +83,7 @@ function App() {
             </Route>
 
             {/*Reviews*/}
-            <Route path="/review" exact element={<Review/>}>
+            <Route path="/review/:slug" exact element={<Review/>}>
             </Route>
             <Route path="/add-review" exact element={<AddReview/>}>
             </Route>
