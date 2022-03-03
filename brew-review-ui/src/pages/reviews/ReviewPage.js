@@ -2,13 +2,14 @@ import { useState, useEffect } from 'react';
 import {  useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import ReviewTable from '../../components/Review/ReviewTable';
+import BeverageList from '../../components/Beverage/BeverageList'
 
 function Reviews() {
-    //The slug is the categoryID
+    //The slug is the beverageID
     const slug = useParams();
 
+    // Get list of reviews for this beverage
     const [reviews, setReviews] = useState([]);
-
     //useEffect calls loadBeverage() to get the Beverage data asyncronously.
     useEffect(() => {
         loadReviews();
@@ -19,20 +20,30 @@ function Reviews() {
         .then(responce => responce.json())
         .then(receivedData => setReviews(receivedData));
     }
-    console.log(reviews)
+
+    // Get data for this beverage
+    const [beverage, setBeverage] = useState([]);
+    //useEffect calls loadBeverage() to get the Beverage data asyncronously.
+    useEffect(() => {
+        loadBeverage();
+    }, []);
+
+    const loadBeverage =  async () => {
+        await fetch(`https://brew-review-backend.herokuapp.com/beverage/${slug.slug}`)
+        .then(responce => responce.json())
+        .then(receivedData => setBeverage(receivedData));
+    }
+    console.log("The beverage is: ")
+    console.log(beverage)
     return (
         <section class="py-4 my-5">
             <div class="container ">
                 <div class="row">
                     <div class="col-10">
                         <div className="page-container">
-                            <h1 class="h1">To do: Populate this page with reviews</h1>
-                            <h2 class="h2">Beverage name</h2>
-                            <ul>
-                                <li>ABV value: ##%</li>
-                                <li>Category name</li>
-                                <li>Brewery Name</li>
-                            </ul>
+                            <h1 class="h1">Reviews</h1>
+                            <BeverageList beverage={beverage}></BeverageList>
+                            
                             <Link to="../add-review">
                             <button class="btn btn-success">New Review</button>
                             </Link>
