@@ -7,7 +7,7 @@ function ParentCategoryTableRow({ parentCategory }) {
 
     return (
         <tr>
-            <td><Link to={ParentCategoryLink}>{parentCategory.Type} TODO fix link</Link></td>
+            <td>{parentCategory.Type} </td>
             <td>
                 <Link to="#">
                     <button type="button" class="btn btn-danger btn-sm m-2">Delete</button>

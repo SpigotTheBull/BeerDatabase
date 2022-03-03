@@ -8,8 +8,8 @@ function CategoryTableRow({ category }) {
     return (
         <tr>
 
-            <td><Link to={categoryTypeLink}>{category.Type}</Link></td>
-            <td><Link to={categoryNameLink}>{category.Name} TODO fix link</Link></td>
+            <td>{category.Type}</td>
+            <td><Link to={categoryNameLink}>{category.Name}</Link></td>
             <td>
                 <Link to="#">
                     <button type="button" class="btn btn-danger btn-sm m-2">Delete</button>

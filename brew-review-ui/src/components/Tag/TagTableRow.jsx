@@ -8,7 +8,7 @@ function ParentCategoryTableRow({ tag }) {
     return (
         <tr>
 
-            <td><Link to={tagLink}>{tag.Name}</Link></td>
+            <td>{tag.Name}</td>
 
             <td>
                 <Link to="#">
