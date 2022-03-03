@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import BeverageForm from '../../components/Beverage/BeverageForm';
 
 function HomePage() {
-    const history = useNavigate();
+
 
     return (
         <>

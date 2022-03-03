@@ -93,7 +93,7 @@ function App() {
             {/*Tag*/}
             <Route path="/tag-list" exact element={<Tag/>}>
             </Route>
-            <Route path="/tag-detail" exact element={<TagDetail/>}>
+            <Route path="/tag-detail/:slug" exact element={<TagDetail/>}>
             </Route>
             <Route path="/add-tag" exact element={<AddTag/>}>
             </Route>

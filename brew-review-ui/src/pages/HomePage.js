@@ -1,11 +1,9 @@
 import { useState, useEffect } from 'react';
-import { useHistory } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
 import { Link } from 'react-router-dom';
 import BeverageList from '../components/Beverage/BeverageList';
 
 function HomePage() {
-    const history = useNavigate();
+
 
     const [beverages, setBeverages] = useState([]);
 
