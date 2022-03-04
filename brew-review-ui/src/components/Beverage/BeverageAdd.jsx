@@ -11,21 +11,11 @@ import Autocomplete from '@mui/material/Autocomplete';
 
 function BeverageAdd() {
     let navigate = useNavigate();
-    const [inputs, setInputs] = useState({}) //decompose
 
     const [nameInput, setNameInput] = React.useState();
     const [abvInput, setAbvInput] = React.useState();
     const [breweryID_FK, setBreweryID_FK] = React.useState();
     const [categoryID_FK, setCategoryID_FK] = React.useState();
-
-
-    //Doesn't work with Auto complete. Does work with traditional html fields
-    const handleChange = (event) => {
-        const name = event.target.name;
-        const value = event.target.value;
-        setInputs(values => ({ ...values, [name]: value }))
-        console.log(breweryID_FK)
-    }
 
     //Submit data to backend
     const handleSubmit = async (e) => {
@@ -37,7 +27,7 @@ function BeverageAdd() {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(data),
         }
-        console.log('https://brew-review-backend.herokuapp.com/beverage/', requestOptions)
+
         const response = await fetch('https://brew-review-backend.herokuapp.com/beverage', requestOptions);
         if (response.status === 200) {
             alert("Successfully added the Beverage: " + data.nameInput);
@@ -128,7 +118,7 @@ function BeverageAdd() {
                         required
                     /> */}
                     <Autocomplete
-                        value={inputs.breweryID_FK}
+                        value={breweryID_FK}
                         onChange={(event, newValue) => {
                             setBreweryID_FK(newValue.breweryID);
                           }}
@@ -158,7 +148,7 @@ function BeverageAdd() {
                         required
                     /> */}
                      <Autocomplete
-                        value={inputs.categoryID_FK}
+                        value={categoryID_FK}
                         onChange={(event, newValue) => {
                             setCategoryID_FK(newValue.categoryID);
                           }}
