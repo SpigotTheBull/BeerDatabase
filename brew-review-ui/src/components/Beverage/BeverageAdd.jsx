@@ -17,27 +17,29 @@ function BeverageAdd() {
         console.log(inputs)
       }
 
-    const handleSubmit = async () => {
+    const handleSubmit = async (e) => {
+        e.preventDefault();
         const requestOptions = {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(inputs),
         }
-
+        console.log('https://brew-review-backend.herokuapp.com/beverage/', requestOptions )
         const response = await fetch('https://brew-review-backend.herokuapp.com/beverage', requestOptions);
         if (response.status === 201) {
             alert("Successfully added the Beverage" + inputs.nameInput);
         }
         else {
-            alert(`Failed to add exercise, status code = ${response.status}`);
+            alert(`Failed to add Beverage, status code = ${response.status}`);
         }
+        console.log(response)
         navigate("/")
     };
 
 
     return (
         <div>            
-            <form onSubmit={handleSubmit}>
+            <form>
                 <div class="mb-3">
                     <label for="nameInput" class="form-label">
                         Beverage Name
