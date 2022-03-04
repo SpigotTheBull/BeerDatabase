@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { useHistory } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { Link } from 'react-router-dom';
-import BeverageForm from '../../components/Beverage/BeverageForm';
+import BeverageAdd from '../../components/Beverage/BeverageAdd';
 
 
 function AddBeverage() {
@@ -14,7 +14,7 @@ function AddBeverage() {
                 <div class="container ">
                     <div class="col-md">
                         <h1>Create new Beverage</h1>
-                        <BeverageForm />
+                        <BeverageAdd />
                     </div>
                 </div>
             </section>

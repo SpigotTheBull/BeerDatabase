@@ -15,6 +15,7 @@ function BeverageForm() {
                         class="form-control"
                         placeholder="Beverage Name"
                         name="name"
+                        required 
                     />
                 </div>
                 <div class="mb-3">
@@ -29,6 +30,7 @@ function BeverageForm() {
                         class="form-control"
                         placeholder="0.00"
                         name="ABV"
+                        required 
                     />
                 </div>
                 <div class="mb-3">
@@ -40,6 +42,7 @@ function BeverageForm() {
                         class="form-control"
                         placeholder="Brewery"
                         name="Category"
+                        required 
                     />
                 </div>
                 <div class="mb-3">
@@ -53,11 +56,12 @@ function BeverageForm() {
                         class="form-control"
                         placeholder="Category"
                         name="Category"
+                        required 
                     />
                 </div>
-                <button class="btn btn-success">
+                <input type="submit" value="Send" class="btn btn-success">
                     Submit Beverage
-                </button>
+                </input>
             </form>
         </div>
     )
