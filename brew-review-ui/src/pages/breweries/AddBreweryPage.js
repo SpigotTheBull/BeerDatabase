@@ -3,6 +3,7 @@ import { useHistory } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { Link } from 'react-router-dom';
 import BrewerForm from '../../components/Brewery/BreweryForm';
+import BreweryAdd from '../../components/Brewery/BreweryAdd';
 
 function AddBrewery() {
     const history = useNavigate();
@@ -13,7 +14,7 @@ function AddBrewery() {
                 <div class="container ">
                     <div class="col-md">
                         <h1>Create new Brewery</h1>
-                        <BrewerForm />
+                        <BreweryAdd />
                     </div>
                 </div>
             </section>

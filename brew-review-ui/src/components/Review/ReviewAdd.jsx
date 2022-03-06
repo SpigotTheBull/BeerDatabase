@@ -126,7 +126,7 @@ function ReviewAdd() {
                             <TextField
                                 {...params}
                                 variant="filled"
-                                label="Tags"
+                                label="After typing Tag, press Enter."
                                 placeholder="Tags"
                             />
                         )}
