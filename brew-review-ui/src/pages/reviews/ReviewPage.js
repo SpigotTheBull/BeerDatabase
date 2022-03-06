@@ -7,6 +7,8 @@ import BeverageList from '../../components/Beverage/BeverageList'
 function Reviews() {
     //The slug is the beverageID
     const slug = useParams();
+    const newReviewLink = "../add-review/" + slug.slug;
+
 
     // Get list of reviews for this beverage
     const [reviews, setReviews] = useState([]);
@@ -44,7 +46,7 @@ function Reviews() {
                             <h1 class="h1">Reviews</h1>
                             <BeverageList beverage={beverage}></BeverageList>
                             
-                            <Link to="../add-review">
+                            <Link to={newReviewLink}>
                             <button class="btn btn-success">New Review</button>
                             </Link>
                             <table class="table">
