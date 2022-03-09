@@ -36,6 +36,7 @@ import Navigation from './components/Navigation';
 //Main entry point for the app
 
 function App() {
+  const[tagToEdit, setTagToEdit] = useState();
 
   return (
     <div className="App">
@@ -91,13 +92,13 @@ function App() {
             </Route>
             
             {/*Tag*/}
-            <Route path="/tag-list" exact element={<Tag/>}>
+            <Route path="/tag-list" exact element={<Tag setTagToEdit={setTagToEdit}/>}>
             </Route>
             <Route path="/tag-detail/:slug" exact element={<TagDetail/>}>
             </Route>
             <Route path="/add-tag" exact element={<AddTag/>}>
             </Route>
-            <Route path="/edit-tag" exact element={<EditTag/>}>
+            <Route path="/edit-tag/" exact element={<EditTag tagToEdit={tagToEdit}/>}>
             </Route>
           </Routes>
         </div>

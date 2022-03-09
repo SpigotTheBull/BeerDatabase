@@ -5,8 +5,9 @@ import { Link } from 'react-router-dom';
 
 import TagTable from '../../components/Tag/TagTable';
 
-function Tags() {
+function Tags({setTagToEdit}) {
     const [tag, setTag] = useState([]);
+    let navigate = useNavigate();
 
     //useEffect calls loadBeverage() to get the Beverage data asyncronously.
     useEffect(() => {
@@ -20,6 +21,12 @@ function Tags() {
     }
     console.log(tag)
 
+
+    const onEdit = tagToEdit =>{
+        const tagEditLink = "/edit-tag/";
+        setTagToEdit(tagToEdit);        
+        navigate(tagEditLink);
+    }
     return (
         <section class="py-4 my-5">
             <div class="container ">
@@ -36,7 +43,7 @@ function Tags() {
                                     <th>Name</th>
                                     <th></th>
                                 </tr>
-                                <TagTable tag={tag}></TagTable>
+                                <TagTable tag={tag} onEdit={onEdit}></TagTable>
                             </table>
                         </div>
                     </div>
