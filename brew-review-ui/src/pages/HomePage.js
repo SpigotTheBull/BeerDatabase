@@ -1,11 +1,11 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import BeverageList from '../components/Beverage/BeverageList';
+import { useNavigate } from "react-router-dom";
 
-function HomePage() {
-
-
+function HomePage({setBeverageToEdit}) {
     const [beverages, setBeverages] = useState([]);
+    let navigate = useNavigate();
 
     //useEffect calls loadBeverage() to get the Beverage data asyncronously.
     useEffect(() => {
@@ -18,6 +18,12 @@ function HomePage() {
         .then(receivedData => setBeverages(receivedData));
     }
     console.log(beverages)
+
+    const onEdit = beverageToEdit =>{
+        const beverageEditLink = "/edit-beverage";
+        setBeverageToEdit(beverageToEdit);        
+        navigate(beverageEditLink);
+    }
 
     return (
         <>
@@ -33,7 +39,7 @@ function HomePage() {
                             <p> Tentative logic: For every beverage in beverage table create a card</p>
                         </div>
 
-                        <BeverageList beverage={beverages} ></BeverageList>
+                        <BeverageList beverage={beverages} onEdit={onEdit}></BeverageList>
                         
                         
                     </div>

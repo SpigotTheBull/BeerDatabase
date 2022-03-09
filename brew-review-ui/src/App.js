@@ -36,7 +36,13 @@ import Navigation from './components/Navigation';
 //Main entry point for the app
 
 function App() {
+  const[beverageToEdit, setBeverageToEdit] = useState();
+  const[breweryToEdit, setBreweryToEdit] = useState();
+  const[categoryToEdit, setCategoryToEdit] = useState();
+  const[parentCategoryToEdit, setParentCategoryToEdit] = useState();
+  const[reviewsToEdit, setReviewsToEdit] = useState();
   const[tagToEdit, setTagToEdit] = useState();
+ 
 
   return (
     <div className="App">
@@ -46,49 +52,49 @@ function App() {
         <Navigation />
           <Routes>
             {/*Beverage*/}
-            <Route path="/" exact element={<HomePage/>}>
+            <Route path="/" exact element={<HomePage setBeverageToEdit={setBeverageToEdit}/>}>
             </Route>
             <Route path="/add-beverage" exact element={<AddBeveragePage/>}>
             </Route>
-            <Route path="/edit-beverage" exact element={<EditBeveragePage/>}>
+            <Route path="/edit-beverage" exact element={<EditBeveragePage beverageToEdit={beverageToEdit}/>}>
             </Route>
             
             {/*Brewery*/}
-            <Route path="/brewery" exact element={<Breweries/>}>
+            <Route path="/brewery" exact element={<Breweries setBreweryToEdit={setBreweryToEdit}/>}>
             </Route>
-            <Route path="/brewery-detail/:slug" exact element={<BreweryDetail/>}>
+            <Route path="/brewery-detail/:slug" exact element={<BreweryDetail setBeverageToEdit={setBeverageToEdit} setBreweryToEdit={setBreweryToEdit}/>}>
             </Route>
             <Route path="/add-brewery" exact element={<AddBrewery/>}>
             </Route>
-            <Route path="/edit-brewery" exact element={<EditBrewery/>}>
+            <Route path="/edit-brewery" exact element={<EditBrewery breweryToEdit={breweryToEdit}/>}>
             </Route>
             
             {/*Category*/}
-            <Route path="/category" exact element={<Category/>}>
+            <Route path="/category" exact element={<Category setCategoryToEdit={setCategoryToEdit}/>}>
             </Route>
             <Route path="/category-detail/:slug" exact element={<CategoryDetail />}>
             </Route>
             <Route path="/add-category" exact element={<AddCategory/>}>
             </Route>
-            <Route path="/edit-category" exact element={<EditCategory/>}>
+            <Route path="/edit-category" exact element={<EditCategory categoryToEdit={categoryToEdit}/>}>
             </Route>
 
             {/*Parent Category*/}
-            <Route path="/parent-category" exact element={<ParentCategory/>}>
+            <Route path="/parent-category" exact element={<ParentCategory setParentCategoryToEdit={setParentCategoryToEdit} />}>
             </Route>
             <Route path="/parent-category-detail" exact element={<ParentCategoryDetail/>}>
             </Route>
             <Route path="/add-parent-category" exact element={<AddParentCategory/>}>
             </Route>
-            <Route path="/edit-parent-category" exact element={<EditParentCategory/>}>
+            <Route path="/edit-parent-category" exact element={<EditParentCategory parentCategoryToEdit={parentCategoryToEdit}/>}>
             </Route>
 
             {/*Reviews*/}
-            <Route path="/review/:slug" exact element={<Review/>}>
+            <Route path="/review/:slug" exact element={<Review setReviewsToEdit={setReviewsToEdit}/>}>
             </Route>
             <Route path="/add-review/:slug" exact element={<AddReview/>}>
             </Route>
-            <Route path="/edit-review" exact element={<EditReview/>}>
+            <Route path="/edit-review" exact element={<EditReview reviewsToEdit={reviewsToEdit}/>}>
             </Route>
             
             {/*Tag*/}

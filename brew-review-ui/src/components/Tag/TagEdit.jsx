@@ -4,12 +4,10 @@ import { useState, useEffect } from "react";
 import ReactDOM from 'react-dom';
 import { useNavigate } from "react-router";
 
-
 //Auto complete stuff
 import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
 //This componet is used on the /add-parent-category page for making parent categories
-
 
 export const TagEdit = ({tagToEdit}) => {
     console.log(tagToEdit)

@@ -2,9 +2,9 @@ import { useState, useEffect } from 'react';
 import { useHistory } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { Link } from 'react-router-dom';
-import BeverageForm from '../../components/Beverage/BeverageForm';
+import BeverageEdit from '../../components/Beverage/BeverageEdit';
 
-function HomePage() {
+export const EditBeverage = ({beverageToEdit}) => {
 
 
     return (
@@ -13,8 +13,8 @@ function HomePage() {
                 <div class="container ">
                     <div class="col-md">
                         <h1>Edit Beverage</h1>
-                        <p>To do: Populate this page with the data being edited</p>
-                        <BeverageForm />
+                        
+                        <BeverageEdit beverageToEdit={beverageToEdit}/>
 
                     </div>
                 </div>
@@ -23,4 +23,4 @@ function HomePage() {
     );
 }
 
-export default HomePage;
+export default EditBeverage;

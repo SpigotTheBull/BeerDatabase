@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 //This componet is used on the home page for the beverage cards
 
-function Beverage({beverage}) {
+function Beverage({beverage, onDelete, onEdit}) {
     const categoryLink = "/category-detail/" + beverage.categoryID;
     const breweryLink = "/brewery-detail/" + beverage.breweryID;
     const reviewLink = "/review/" + beverage.beverageID;
@@ -25,7 +25,7 @@ function Beverage({beverage}) {
                         </Link>
                         <button type="button" class="btn btn-danger btn-sm m-2">Delete</button>
                         <Link to="/edit-beverage">
-                            <button type="button" class="btn btn-warning btn-sm m-2">Edit</button>
+                            <button type="button" class="btn btn-warning btn-sm m-2" onClick={() => onEdit(beverage)}>Edit</button>
                         </Link>
                     </div>
                 </div>
