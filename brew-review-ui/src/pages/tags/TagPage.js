@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 import TagTable from '../../components/Tag/TagTable';
 
-function Tags({setTagToEdit}) {
+function Tags({ setTagToEdit }) {
     const [tag, setTag] = useState([]);
     let navigate = useNavigate();
 
@@ -22,9 +22,9 @@ function Tags({setTagToEdit}) {
     console.log(tag)
 
 
-    const onEdit = tagToEdit =>{
+    const onEdit = tagToEdit => {
         const tagEditLink = "/edit-tag/";
-        setTagToEdit(tagToEdit);        
+        setTagToEdit(tagToEdit);
         navigate(tagEditLink);
     }
     return (
@@ -38,13 +38,10 @@ function Tags({setTagToEdit}) {
                             <Link to="../add-tag">
                                 <button class="btn btn-success">New Tag</button>
                             </Link>
-                            <table class="table">
-                                <tr>
-                                    <th>Name</th>
-                                    <th></th>
-                                </tr>
+                            <ul>
+                                Name
                                 <TagTable tag={tag} onEdit={onEdit}></TagTable>
-                            </table>
+                            </ul>
                         </div>
                     </div>
                 </div>

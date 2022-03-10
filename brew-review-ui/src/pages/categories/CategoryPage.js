@@ -28,14 +28,8 @@ function Category() {
                             <Link to="../add-category">
                                 <button class="btn btn-success">New Category</button>
                             </Link>
-                            <table class="table">
-                                <tr>
-                                    <th>Type</th>
-                                    <th>Name</th>
-                                    <th></th>
-                                </tr>
                                 <CategoryTable category={category}></CategoryTable>
-                            </table>
+
                         </div>
                     </div>
                 </div>

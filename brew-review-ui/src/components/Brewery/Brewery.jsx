@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 function Brewery({brewery}) {
     const breweryLink = "/brewery-detail/" + brewery.breweryID;
 
+    
     let navigate = useNavigate();
 
     //Submit data to backend

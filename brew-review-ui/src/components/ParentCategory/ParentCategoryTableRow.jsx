@@ -1,16 +1,50 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 //This componet is used on the home page for the beverage cards
 
 function ParentCategoryTableRow({ parentCategory }) {
     const ParentCategoryLink = "/parent-category-detail/" + parentCategory.parentCategoryID;
+
+    let navigate = useNavigate();
+
+    //Submit data to backend
+    const handleDelete = async (e) => {
+        e.preventDefault();
+        const data = {}
+
+        const requestOptions = {
+            method: 'DELETE',
+            headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' },
+            body: JSON.stringify(data),
+        }
+
+        const response = await fetch(`https://brew-review-backend.herokuapp.com/parent-category/delete-parent-category/${parentCategory.parentCategoryID}`, requestOptions);
+        if (response.status === 200) {
+            alert("Successfully delete the parentCategory: " + parentCategory.name);
+            
+        }
+        else {
+            alert(`Failed to delete parentCategory, status code = ${response.status}`);
+            
+        }
+        navigate("/parent-category")
+        console.log(response)
+
+    };
 
     return (
         <tr>
             <td>{parentCategory.Type} </td>
             <td>
                 <Link to="#">
-                    <button type="button" class="btn btn-danger btn-sm m-2">Delete</button>
+                    <button 
+                    type="button" 
+                    class="btn btn-danger btn-sm m-2"
+                    onClick={handleDelete}
+                    >
+                        Delete
+                    </button>
                 </Link>
                 <Link to="../edit-tag">
                     <button type="button" class="btn btn-warning btn-sm m-2">Edit</button>
