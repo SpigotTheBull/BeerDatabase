@@ -1,11 +1,13 @@
 import React from "react";
 import CategoryTableRow from "./CategoryTableRow";
 
-function CategoryTable({ category }) {
+function CategoryTable({ category,  onDelete, onEdit  }) {
     return (
         <>
             {category.map((category, i) => <CategoryTableRow category={category}
-                    key={i} />)}
+                onEdit={onEdit}
+                onDelete={onDelete}
+                key={i} />)}
 
         </>
     );

@@ -4,8 +4,8 @@ import { Link, useNavigate } from 'react-router-dom';
 
 import CategoryTable from '../../components/category/CategoryTable';
 
-function Category({setCategoryToEdit}, {setBeverageToEdit}) {
-
+function Category({setCategoryToEdit}) {
+    let navigate = useNavigate();
 
     const [category, setCategory] = useState([]);
 
@@ -20,6 +20,11 @@ function Category({setCategoryToEdit}, {setBeverageToEdit}) {
             .then(receivedData => setCategory(receivedData));
     }
     console.log(category)
+    const onEdit = categoryToEdit => {
+        const categoryEditLink = "/edit-category";
+        setCategoryToEdit(categoryToEdit);
+        navigate(categoryEditLink);
+    }
 
     return (
         <section class="py-4 my-5">
@@ -31,7 +36,7 @@ function Category({setCategoryToEdit}, {setBeverageToEdit}) {
                             <Link to="../add-category">
                                 <button class="btn btn-success">New Category</button>
                             </Link>
-                                <CategoryTable category={category} ></CategoryTable>
+                                <CategoryTable category={category} onEdit={onEdit}></CategoryTable>
 
                         </div>
                     </div>
