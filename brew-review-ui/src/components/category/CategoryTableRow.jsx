@@ -22,11 +22,11 @@ function CategoryTableRow({ category, onDelete, onEdit }) {
 
         const response = await fetch(`https://brew-review-backend.herokuapp.com/category/delete-category/${category.categoryID}`, requestOptions);
         if (response.status === 200) {
-            alert("Successfully delete the Category: " + category.name);
+            //alert("Successfully delete the Category: " + category.name);
 
         }
         else {
-            alert(`Failed to delete Category, status code = ${response.status}`);
+            //alert(`Failed to delete Category, status code = ${response.status}`);
 
         }
         navigate("/category")

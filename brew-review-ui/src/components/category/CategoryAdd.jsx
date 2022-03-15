@@ -31,10 +31,10 @@ function CategoryAdd() {
 
         const response = await fetch('https://brew-review-backend.herokuapp.com/category/', requestOptions);
         if (response.status === 200) {
-            alert("Successfully added the Category: " + data.nameInput);
+            //alert("Successfully added the Category: " + data.nameInput);
         }
         else {
-            alert(`Failed to add Category, status code = ${response.status}`);
+            //alert(`Failed to add Category, status code = ${response.status}`);
         }
         console.log(response)
         navigate("/category")

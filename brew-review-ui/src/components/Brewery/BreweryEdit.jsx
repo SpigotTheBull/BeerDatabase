@@ -30,10 +30,10 @@ export const BreweryEdit = ({ breweryToEdit }) => {
 
         const response = await fetch(`https://brew-review-backend.herokuapp.com/brewery/edit-brewery/${breweryToEdit.breweryID}`, requestOptions);
         if (response.status === 200) {
-            alert("Successfully edited the Brewery: " + data.nameInput);
+            //alert("Successfully edited the Brewery: " + data.nameInput);
         }
         else {
-            alert(`Failed to edited Brewery, status code = ${response.status}`);
+            //alert(`Failed to edited Brewery, status code = ${response.status}`);
         }
         console.log(response)
         navigate("/brewery/")

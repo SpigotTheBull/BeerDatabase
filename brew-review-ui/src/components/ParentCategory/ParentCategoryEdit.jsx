@@ -32,10 +32,10 @@ export const ParentCategoryEdit = ({parentCategoryToEdit}) => {
 
         const response = await fetch(`https://brew-review-backend.herokuapp.com/parent-category/edit-parent-category/${parentCategoryID}`, requestOptions);
         if (response.status === 200) {
-            alert("Successfully edit the Parent Category: " + data.nameInput);
+            //alert("Successfully edit the Parent Category: " + data.nameInput);
         }
         else {
-            alert(`Failed to edit  Parent Category, status code = ${response.status}`);
+            //alert(`Failed to edit  Parent Category, status code = ${response.status}`);
         }
         console.log(response)
         navigate("/parent-category")

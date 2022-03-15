@@ -21,11 +21,11 @@ function TagTableRow({ tag, onDelete, onEdit }) {
 
         const response = await fetch(`https://brew-review-backend.herokuapp.com/tag/delete-tag/${tag.tagID}`, requestOptions);
         if (response.status === 200) {
-            alert("Successfully delete the Tag: " + tag.name);
+            //alert("Successfully delete the Tag: " + tag.name);
 
         }
         else {
-            alert(`Failed to delete Tag, status code = ${response.status}`);
+            //alert(`Failed to delete Tag, status code = ${response.status}`);
 
         }
         navigate("/tag-list")

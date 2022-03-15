@@ -30,10 +30,10 @@ function TagAdd() {
 
         const response = await fetch('https://brew-review-backend.herokuapp.com/tag/', requestOptions);
         if (response.status === 200) {
-            alert("Successfully added the Tag: " + data.nameInput);
+            //alert("Successfully added the Tag: " + data.nameInput);
         }
         else {
-            alert(`Failed to add Parent Category, status code = ${response.status}`);
+            //alert(`Failed to add Parent Category, status code = ${response.status}`);
         }
         console.log(response)
         navigate("/tag-list")

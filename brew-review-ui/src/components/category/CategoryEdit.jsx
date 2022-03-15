@@ -33,10 +33,10 @@ export const CategoryEdit = ({ categoryToEdit }) => {
 
         const response = await fetch(`https://brew-review-backend.herokuapp.com/category/edit-category/${categoryID}`, requestOptions);
         if (response.status === 200) {
-            alert("Successfully edit the Category: " + data.nameInput);
+            //alert("Successfully edit the Category: " + data.nameInput);
         }
         else {
-            alert(`Failed to edit Category, status code = ${response.status}`);
+            //alert(`Failed to edit Category, status code = ${response.status}`);
         }
         console.log(response)
         navigate("/category")

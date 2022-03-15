@@ -30,10 +30,10 @@ function BeverageAdd() {
 
         const response = await fetch('https://brew-review-backend.herokuapp.com/beverage', requestOptions);
         if (response.status === 200) {
-            alert("Successfully added the Beverage: " + data.nameInput);
+            //alert("Successfully added the Beverage: " + data.nameInput);
         }
         else {
-            alert(`Failed to add Beverage, status code = ${response.status}`);
+            //alert(`Failed to add Beverage, status code = ${response.status}`);
         }
         console.log(response)
         navigate("/")

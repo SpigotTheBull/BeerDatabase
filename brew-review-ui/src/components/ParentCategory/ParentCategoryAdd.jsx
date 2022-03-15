@@ -30,10 +30,10 @@ function ParentCategoryAdd() {
 
         const response = await fetch('https://brew-review-backend.herokuapp.com/parent-category/', requestOptions);
         if (response.status === 200) {
-            alert("Successfully added the Parent Category: " + data.nameInput);
+            //alert("Successfully added the Parent Category: " + data.nameInput);
         }
         else {
-            alert(`Failed to add Parent Category, status code = ${response.status}`);
+            //alert(`Failed to add Parent Category, status code = ${response.status}`);
         }
         console.log(response)
         navigate("/parent-category")

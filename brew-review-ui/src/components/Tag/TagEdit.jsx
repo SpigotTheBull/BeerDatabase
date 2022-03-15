@@ -32,10 +32,10 @@ export const TagEdit = ({tagToEdit}) => {
 
         const response = await fetch(`https://brew-review-backend.herokuapp.com/tag/update-tag/${tagID}`, requestOptions);
         if (response.status === 200) {
-            alert("Successfully edit the Tag: " + data.nameInput);
+            //alert("Successfully edit the Tag: " + data.nameInput);
         }
         else {
-            alert(`Failed to edit Tag, status code = ${response.status}`);
+            //alert(`Failed to edit Tag, status code = ${response.status}`);
         }
         console.log(response)
         navigate("/tag-list")

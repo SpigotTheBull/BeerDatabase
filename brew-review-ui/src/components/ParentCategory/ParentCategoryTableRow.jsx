@@ -21,11 +21,11 @@ function ParentCategoryTableRow({ parentCategory, onDelete, onEdit  }) {
 
         const response = await fetch(`https://brew-review-backend.herokuapp.com/parent-category/delete-parent-category/${parentCategory.parentCategoryID}`, requestOptions);
         if (response.status === 200) {
-            alert("Successfully delete the parentCategory: " + parentCategory.name);
+            //alert("Successfully delete the parentCategory: " + parentCategory.name);
 
         }
         else {
-            alert(`Failed to delete parentCategory, status code = ${response.status}`);
+            //alert(`Failed to delete parentCategory, status code = ${response.status}`);
 
         }
         navigate("/parent-category")

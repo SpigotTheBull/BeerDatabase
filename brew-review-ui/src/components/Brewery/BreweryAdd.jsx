@@ -30,10 +30,10 @@ function BreweryAdd() {
 
         const response = await fetch('https://brew-review-backend.herokuapp.com/brewery', requestOptions);
         if (response.status === 200) {
-            alert("Successfully added the Brewery: " + data.nameInput);
+            //alert("Successfully added the Brewery: " + data.nameInput);
         }
         else {
-            alert(`Failed to add Brewery, status code = ${response.status}`);
+            //alert(`Failed to add Brewery, status code = ${response.status}`);
         }
         console.log(response)
         navigate("/brewery/")

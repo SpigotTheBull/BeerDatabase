@@ -23,11 +23,11 @@ function Beverage({beverage, onDelete, onEdit}) {
     
             const response = await fetch(`https://brew-review-backend.herokuapp.com/beverage/delete-beverage/${beverage.beverageID}`, requestOptions);
             if (response.status === 200) {
-                alert("Successfully delete the Beverage: " + data.nameInput);
+                //alert("Successfully delete the Beverage: " + data.nameInput);
                 navigate("/")
             }
             else {
-                alert(`Failed to delete Beverage, status code = ${response.status}`);
+                //alert(`Failed to delete Beverage, status code = ${response.status}`);
                 navigate("/")
             }
             navigate("/")
