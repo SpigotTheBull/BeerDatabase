@@ -1,11 +1,10 @@
 import { useState, useEffect } from 'react';
-import { useHistory } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
-import { Link } from 'react-router-dom';
+
+import { Link, useNavigate, useParams } from "react-router-dom";
+
 import Brewery from '../../components/Brewery/Brewery';
 
 
-import {  useParams } from 'react-router-dom';
 import BeverageList from '../../components/Beverage/BeverageList';
 import BreweryList from '../../components/Brewery/BreweryList';
 

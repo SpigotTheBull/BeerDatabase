@@ -1,9 +1,12 @@
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+
 
 import CategoryTable from '../../components/category/CategoryTable';
 
-function Category() {
+function Category({setCategoryToEdit}, {setBeverageToEdit}) {
+
+
     const [category, setCategory] = useState([]);
 
     //useEffect calls loadBeverage() to get the Beverage data asyncronously.
@@ -28,7 +31,7 @@ function Category() {
                             <Link to="../add-category">
                                 <button class="btn btn-success">New Category</button>
                             </Link>
-                                <CategoryTable category={category}></CategoryTable>
+                                <CategoryTable category={category} ></CategoryTable>
 
                         </div>
                     </div>

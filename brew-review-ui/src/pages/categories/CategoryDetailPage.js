@@ -1,11 +1,19 @@
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import {  useParams } from 'react-router-dom';
+
+import { useParams, Link, useNavigate } from 'react-router-dom';
 import BeverageList from '../../components/Beverage/BeverageList';
 import CategoryList from '../../components/category/CategoryList';
 
-function CategoryDetail() {
-    
+function CategoryDetail({setBeverageToEdit}) {
+    //Used for beverage edit
+    let navigate = useNavigate();
+
+    const onEdit = beverageToEdit => {
+        const beverageEditLink = "/edit-beverage";
+        setBeverageToEdit(beverageToEdit);
+        navigate(beverageEditLink);
+    }
+
     const [beverages, setBeverages] = useState([]);
 
     const [category, setCategory] = useState([]);
@@ -18,10 +26,10 @@ function CategoryDetail() {
         loadBeverages();
     }, []);
 
-    const loadBeverages =  async () => {
+    const loadBeverages = async () => {
         await fetch(`https://brew-review-backend.herokuapp.com/beverage/category/${slug.slug}`)
-        .then(responce => responce.json())
-        .then(receivedData => setBeverages(receivedData));
+            .then(responce => responce.json())
+            .then(receivedData => setBeverages(receivedData));
     }
     console.log(beverages)
 
@@ -30,10 +38,10 @@ function CategoryDetail() {
         loadCategory();
     }, []);
 
-    const loadCategory =  async () => {
+    const loadCategory = async () => {
         await fetch(`https://brew-review-backend.herokuapp.com/category/${slug.slug}`)
-        .then(responce => responce.json())
-        .then(receivedData => setCategory(receivedData));
+            .then(responce => responce.json())
+            .then(receivedData => setCategory(receivedData));
     }
     console.log(category)
 
@@ -54,13 +62,13 @@ function CategoryDetail() {
 
                             <p> Tentative logic: Select beverages with matching category and display below</p>
                         </div>
-                        <BeverageList beverage={beverages} ></BeverageList>
-                  
+                        <BeverageList beverage={beverages} onEdit={onEdit}></BeverageList>
+
                     </div>
                 </div>
-            </section>            
+            </section>
         </div>
-        
+
     )
 }
 
