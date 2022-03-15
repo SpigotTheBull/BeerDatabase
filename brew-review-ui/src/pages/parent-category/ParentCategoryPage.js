@@ -4,9 +4,10 @@ import { useNavigate } from "react-router-dom";
 import { Link } from 'react-router-dom';
 import ParentCategoryTable from '../../components/ParentCategory/ParentCategoryTable';
 
-function ParentCategory() {
 
+function ParentCategory({ setParentCategoryToEdit }) {
     const [parentCategory, setParentCategory] = useState([]);
+    let navigate = useNavigate();
 
     //useEffect calls loadBeverage() to get the Beverage data asyncronously.
     useEffect(() => {
@@ -20,6 +21,11 @@ function ParentCategory() {
     }
     console.log(parentCategory)
 
+    const onEdit = parentCategoryToEdit => {
+        const parentCategoryEditLink = "/edit-parent-category";
+        setParentCategoryToEdit(parentCategoryToEdit);
+        navigate(parentCategoryEditLink);
+    }
     return (
         <section class="py-4 my-5">
             <div class="container ">
@@ -30,13 +36,10 @@ function ParentCategory() {
                             <Link to="../add-parent-category">
                                 <button class="btn btn-success">New Parent Category</button>
                             </Link>
-                            <table class="table">
-                                <tr>
-                                    <th>Type</th>
-                                    <th></th>
-                                </tr>
-                                <ParentCategoryTable parentCategory={parentCategory}></ParentCategoryTable>                            
-                            </table>
+
+                            <ul >
+                                <ParentCategoryTable parentCategory={parentCategory} onEdit={onEdit}></ParentCategoryTable>
+                            </ul>
                         </div>
                     </div>
                 </div>

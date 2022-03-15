@@ -1,11 +1,14 @@
 import React from "react";
 import ParentCategoryTableRow from "./ParentCategoryTableRow";
 
-function ParentCategoryTable({ parentCategory }) {
+function ParentCategoryTable({ parentCategory,  onDelete, onEdit }) {
     return (
         <>
             {parentCategory.map((parentCategory, i) => <ParentCategoryTableRow parentCategory={parentCategory}
-                    key={i} />)}
+                    onEdit={onEdit}
+                    onDelete={onDelete}
+                    key={i}                
+                    />)}
 
         </>
     );

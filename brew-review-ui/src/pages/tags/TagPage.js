@@ -2,8 +2,8 @@ import { useState, useEffect } from 'react';
 import { useHistory } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { Link } from 'react-router-dom';
-
 import TagTable from '../../components/Tag/TagTable';
+
 
 function Tags({ setTagToEdit }) {
     const [tag, setTag] = useState([]);
@@ -20,7 +20,6 @@ function Tags({ setTagToEdit }) {
             .then(receivedData => setTag(receivedData));
     }
     console.log(tag)
-
 
     const onEdit = tagToEdit => {
         const tagEditLink = "/edit-tag/";
