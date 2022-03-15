@@ -9,8 +9,14 @@ import {  useParams } from 'react-router-dom';
 import BeverageList from '../../components/Beverage/BeverageList';
 import BreweryList from '../../components/Brewery/BreweryList';
 
-function BreweryDetail() {
-
+function BreweryDetail({setBeverageToEdit}) {
+    let navigate = useNavigate();
+    
+    const onEdit = beverageToEdit =>{
+        const beverageEditLink = "/edit-beverage";
+        setBeverageToEdit(beverageToEdit);        
+        navigate(beverageEditLink);
+    }
        
     const [beverages, setBeverages] = useState([]);
 
@@ -59,7 +65,7 @@ function BreweryDetail() {
 
                             <p> Tentative logic: For every Beverage in Beverage table create a card if it matches this brewery</p>
                         </div>
-                        <BeverageList beverage={beverages} ></BeverageList>                 
+                        <BeverageList beverage={beverages} onEdit={onEdit}></BeverageList>                 
                     </div>
                 </div>
             </section>            
