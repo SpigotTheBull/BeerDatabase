@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 //This componet is used on the home page for the beverage cards
 
-function Brewery({brewery}) {
+function Brewery({brewery, onDelete, onEdit}) {
     const breweryLink = "/brewery-detail/" + brewery.breweryID;
 
     
@@ -55,7 +55,7 @@ function Brewery({brewery}) {
                             Delete
                         </button>
                         <Link to="/edit-brewery">
-                            <button type="button" class="btn btn-warning btn-sm m-2">Edit</button>
+                            <button type="button" class="btn btn-warning btn-sm m-2"  onClick={() => onEdit(brewery)}>Edit</button>
                         </Link>
                     </div>
                 </div>

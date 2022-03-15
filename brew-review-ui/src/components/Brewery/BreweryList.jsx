@@ -1,11 +1,13 @@
 import React from "react";
 import Brewery from "./Brewery";
 
-function BreweryList({ brewery }) {
+function BreweryList({ brewery, onDelete, onEdit }) {
     return (
         <>
             {brewery.map((brewery, i) => <Brewery brewery={brewery}
-                    key={i} />)}
+                onDelete={onDelete}
+                onEdit={onEdit}
+                key={i} />)}
 
         </>
     );

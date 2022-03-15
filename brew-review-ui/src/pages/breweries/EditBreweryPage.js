@@ -2,9 +2,12 @@ import { useState, useEffect } from 'react';
 import { useHistory } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { Link } from 'react-router-dom';
-import BrewerForm from '../../components/Brewery/BreweryForm';
+import BreweryEdit from '../../components/Brewery/BreweryEdit';
 
-function EditBrewery() {
+
+export const EditBrewery = ({breweryToEdit}) => {
+    console.log("EditBrewery received: ", breweryToEdit )
+
     const history = useNavigate();
 
     return (
@@ -13,7 +16,7 @@ function EditBrewery() {
             <div class="container ">
                 <div class="col-md">
                     <h1>Edit Brewery</h1>
-                    <BrewerForm />
+                    <BreweryEdit breweryToEdit={breweryToEdit}/>
                 </div>
             </div>
         </section>

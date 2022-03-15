@@ -6,9 +6,10 @@ import Brewery from '../../components/Brewery/Brewery';
 import BreweryList from '../../components/Brewery/BreweryList';
 
 
-function Breweries() {
+function Breweries({setBreweryToEdit}) {
     const [breweries, setBreweries] = useState([]);
-
+    let navigate = useNavigate();
+    
     //useEffect calls loadBeverage() to get the Beverage data asyncronously.
     useEffect(() => {
         loadBreweries();
@@ -21,6 +22,12 @@ function Breweries() {
     }
     console.log(breweries)
     
+    const onEdit = breweryToEdit =>{
+        const breweryEditLink = "/edit-brewery";
+        setBreweryToEdit(breweryToEdit);        
+        navigate(breweryEditLink);
+    }
+
     return (
         <div className="page-container">
 
@@ -36,7 +43,7 @@ function Breweries() {
 
                             <p> Tentative logic: For every Brewery in Brewery table create a card</p>
                         </div>
-                        <BreweryList brewery={breweries} > </BreweryList>
+                        <BreweryList brewery={breweries} onEdit={onEdit} > </BreweryList>
                         
                         
                     </div>
