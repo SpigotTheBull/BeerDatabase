@@ -58,7 +58,7 @@ function Review({ review }) {
                 <Link to="#">
                     <button type="button" class="btn btn-danger btn-sm m-2">Delete</button>
                 </Link>
-                <Link to="../edit-tag">
+                <Link to="../edit-review">
                     <button type="button" class="btn btn-warning btn-sm m-2">Edit</button>
                 </Link></td>
         </tr>
